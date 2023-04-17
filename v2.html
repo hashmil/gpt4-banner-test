@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&A Labs Banner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Unica+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+      width: 300px;
+      height: 250px;
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .logo {
+      width: 129px;
+      height: 22px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .frame,
+    .frame3-word {
+      font-family: 'Unica One', cursive;
+      color: yellow;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+    }
+
+    .frame {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+    }
+
+    .frame3-word {
+      font-size: 18px;
+    }
+
+    #frame3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: calc(60% - 30px);
+      padding-bottom: 26px;
+    }
+
+    .cta {
+      font-family: 'Raleway', sans-serif;
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      color: black;
+      text-align: center;
+      line-height: 30px;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      opacity: 0;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+
+    .bg {
+      position: absolute;
+      width: 300px;
+      height: 250px;
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+
+<body>
+  <div class="banner">
+    <div class="bg" id="bg"></div>
+    <img class="logo" src="logo.png" alt="C&A LABS">
+    <div class="frame" id="frame1">Discover the power of<br />generative AI</div>
+    <div class="frame" id="frame2">Revolutionising<br />text and image <br />generations</div>
+    <div class="frame" id="frame3">
+      <div class="frame3-word" id="word1">EXPERIENCE</div>
+      <div class="frame3-word" id="word2">OUR</div>
+      <div class="frame3-word" id="word3">UNIQUE</div>
+      <div class="frame3-word" id="word4">AI</div>
+      <div class="frame3-word" id="word5">SOLUTIONS</div>
+    </div>
+    <div class="cta" id="cta">Learn More</div>
+  </div>
+  <script>
+    const tl = gsap.timeline();
+    tl.to("#bg", {duration: 6, scale: 1.6, ease: "power2.out"})
+      .to("#frame1", {duration: 1, opacity: 1, delay: -5})
+      .to("#frame1", {duration: 1, opacity: 0, delay: -3})
+      .to("#frame2", {duration: 1, opacity: 1, delay: -2})
+      .to("#frame2", {duration: 1, opacity: 0, delay: 2})
+      .to("#bg", {duration: 1, opacity: 0, delay: -1})
+      .to("#frame3", {duration: 1, opacity: 1, delay: -1})
+      .to("#word1", {duration: 0.5, opacity: 1})
+      .to("#word2", {duration: 0.5, opacity: 1})
+      .to("#word3", {duration: 0.5, opacity: 1})
+      .to("#word4", {duration: 0.5, opacity: 1})
+      .to("#word5", {duration: 0.5, opacity: 1})
+      .to("#cta", {duration: 1, opacity: 1});
+  </script>
+</body>
+
+</html>
