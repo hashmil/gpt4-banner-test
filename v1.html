@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImaginAI Labs Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .banner {
+            width: 300px;
+            height: 250px;
+            background-color: yellow;
+            position: relative;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .frame {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+        }
+        .frame3-word {
+            font-size: 20px;
+            opacity: 0;
+        }
+        .cta {
+            width: 120px;
+            height: 40px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            bottom: 20px;
+            left: 90px;
+            cursor: pointer;
+            opacity: 0;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <div class="logo">ImaginAI LABS</div>
+        <div class="frame" id="frame1">Discover the power of generative AI.</div>
+        <div class="frame" id="frame2">Revolutionizing text and image generations.</div>
+        <div class="frame" id="frame3">
+            <div class="frame3-word" id="word1">Experience</div>
+            <div class="frame3-word" id="word2">our</div>
+            <div class="frame3-word" id="word3">unique</div>
+            <div class="frame3-word" id="word4">AI</div>
+            <div class="frame3-word" id="word5">solutions.</div>
+        </div>
+        <div class="cta" id="cta">Learn More</div>
+    </div>
+    <script>
+        const tl = gsap.timeline();
+        tl.to("#frame1", {duration: 1, opacity: 1})
+          .to("#frame1", {duration: 1, opacity: 0, delay: 2})
+          .to("#frame2", {duration: 1, opacity: 1})
+          .to("#frame2", {duration: 1, opacity: 0, delay: 2})
+          .to("#frame3", {duration: 1, opacity: 1})
+          .to("#word1", {duration: 0.5, opacity: 1})
+          .to("#word2", {duration: 0.5, opacity: 1})
+          .to("#word3", {duration: 0.5, opacity: 1})
+          .to("#word4", {duration: 0.5, opacity: 1})
+          .to("#word5", {duration: 0.5, opacity: 1})
+          .to("#cta", {duration: 1, opacity: 1});
+    </script>
+</body>
+</html>
+
